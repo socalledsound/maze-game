@@ -49,6 +49,7 @@ function draw(){
             current.highlight()
             console.log('finished')
             noLoop()
+            
         }
     }
    

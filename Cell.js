@@ -1,8 +1,8 @@
 class Cell {
-    constructor(idx, x, y, size){
+    constructor(idx, x, y, size, paddingLeft, paddingTop){
         this.idx = idx
-        this.x = x * size
-        this.y = y * size
+        this.x = x * size + paddingLeft
+        this.y = y * size + paddingTop
         this.w = size
         this.h = size
         this.colIdx = x

@@ -1,5 +1,5 @@
 class Maze {
-    constructor(numRows, numCols, cellSize){
+    constructor(numRows, numCols, cellSize, paddingLeft, paddingTop){
         this.cells = []
         this.current = 0
         this.cellCount = 0
@@ -7,13 +7,15 @@ class Maze {
         this.numCols = numCols
         this.numRows = numRows
         this.cellSize = cellSize
+        this.paddingLeft = paddingLeft
+        this.paddingTop = paddingTop
         this.initCells()
     }
 
     initCells(){
         for(let y = 0; y < this.numCols; y++){
             for(let x = 0; x < this.numRows; x++){
-                this.cells.push(new Cell(this.cellCount, x , y, this.cellSize))
+                this.cells.push(new Cell(this.cellCount, x , y, this.cellSize, this.paddingLeft, this.paddingTop))
                 this.cellCount ++
             }
         }
