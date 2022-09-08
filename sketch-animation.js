@@ -1,18 +1,23 @@
 const canvasWidth = 400, canvasHeight = 400
 const numCols = 10
 const numRows = 10
-const cellSize = 40
+const cellSize = 30
 let cells = []
 let current
 let cellCount = 0
 let stack = []
+let maze = {
+    numCols: 10,
+    numRows: 10,
+    cellSize: 40
+}
 
 function setup(){
     createCanvas(canvasWidth, canvasHeight)
     frameRate(10)
     for(let y = 0; y < numCols; y++){
         for(let x = 0; x < numRows; x++){
-            cells.push(new Cell(cellCount, x , y, cellSize))
+            cells.push(new CellAnimation(cellCount, x , y, cellSize, 50, 50))
             cellCount ++
         }
     }

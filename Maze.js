@@ -9,7 +9,7 @@ class Maze {
         this.cellSize = cellSize
         this.paddingLeft = paddingLeft
         this.paddingTop = paddingTop
-        this.initCells()
+        
     }
 
     initCells(){
@@ -21,6 +21,7 @@ class Maze {
         }
         this.current = this.cells[0]
     }
+    
 
     generate(){
         console.log(this.current)

@@ -1,9 +1,16 @@
 function getGridIndex(x, y){
-    if( x < 0 || x > maze.numCols - 1 || y < 0 || y > maze.numCols -1 ){
+    if( x < 0 || x > numCols - 1 || y < 0 || y > numCols -1 ){
         return - 1
     }
-    return x + y * maze.numCols
+    return x + y * numCols
 }
+
+// function getGridIndexAnimation(x, y){
+//     if( x < 0 || x > numCols - 1 || y < 0 || y > numCols -1 ){
+//         return - 1
+//     }
+//     return x + y * maze.numCols
+// }
 
 function  getNeighbors(x, y, arr){
     const neighbors = []
@@ -11,6 +18,23 @@ function  getNeighbors(x, y, arr){
     const right = arr[getGridIndex(x + 1, y)]
     const bottom = arr[getGridIndex(x, y + 1)]
     const left = arr[getGridIndex(x - 1, y)] 
+    const candidates = [top, right, bottom, left]
+    candidates.forEach( item => {
+        if(item != undefined){
+            if(!item.visited){
+                neighbors.push(item)
+            }
+        }
+    })
+    return neighbors
+}
+
+function getNeighborsAnimation(arr, idx){
+    const neighbors = []
+    const top = arr[idx - 1]
+    const right = arr[idx + 1]
+    const bottom = arr[idx + numCols]
+    const left = arr[idx - numCols] 
     const candidates = [top, right, bottom, left]
     candidates.forEach( item => {
         if(item != undefined){
@@ -34,10 +58,10 @@ function removeWalls(a, b){
         //console.log('remove -1')
         a.walls[1] = false
         b.walls[3] = false
-    } else if(dif === maze.numCols){
+    } else if(dif === numCols){
         a.walls[0] = false
         b.walls[2] = false
-    } else if(dif === maze.numCols * -1){
+    } else if(dif === numCols * -1){
         a.walls[2] = false
         b.walls[0] = false
     }

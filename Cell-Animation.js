@@ -1,4 +1,4 @@
-class Cell {
+class CellAnimation {
     constructor(idx, x, y, size, paddingLeft, paddingTop){
         this.idx = idx
         this.x = x * size + paddingLeft
@@ -15,7 +15,7 @@ class Cell {
     }
 
     checkNeighbors(){
-        const neighbors = getNeighbors(this.colIdx, this.rowIdx, game.maze.cells)
+        const neighbors = getNeighborsAnimation(cells, this.idx)
         //console.log(neighbors)  
         if(neighbors.length > 0){
             const randomInt = int(random(0, neighbors.length))
