@@ -4,7 +4,7 @@ let game
 let theta = 0
 function setup(){
     createCanvas(canvasWidth, canvasHeight)
-    frameRate(10)
+    // frameRate(10)
     game = new Game()
     game.init()
 

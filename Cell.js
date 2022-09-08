@@ -10,8 +10,12 @@ class Cell {
         this.visited = false
         this.visitedColor = [190,20,190,110]
         this.strokeColor = [255, 255, 255]
+        this.lines = [
+            
+        ]
         // [top, right, bottom, left]
         this.walls = [true, true, true, true]
+        
     }
 
     checkNeighbors(){

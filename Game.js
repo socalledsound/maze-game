@@ -1,6 +1,6 @@
 class Game {
     constructor(){
-        this.gravity = createVector(0,6)
+        this.gravity = createVector(0,4)
     }
 
     checkWallCollisions(){
